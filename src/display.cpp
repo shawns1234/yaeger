@@ -1,5 +1,5 @@
 
-#include "config.h"
+#include "roaster_config.h"
 #include <LiquidCrystal_I2C.h>
 #include <WiFi.h>
 
