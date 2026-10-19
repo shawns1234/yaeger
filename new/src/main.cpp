@@ -8,10 +8,10 @@
 #include "Command/Command.h"
 #include "HardwareSerial.h"
 #include "WiFiManager/WiFiManager.h"
-#include "api.h"
-#include "display.h"
-#include "logging.h"
-#include "wifi_setup.h"
+#include "API/api.h"
+#include "Display/display.h"
+#include "Logging/Logging.h"
+#include "WiFiSetup/wifisetup.h"
 #include "Controller/Controller.h"
 #include "preferenceKeys.h"
 
@@ -70,7 +70,7 @@ void setup()
   log("Setting up WiFi");
   preferences.begin("preferences-v1");
   setupWifi(&preferences);
-  initDisplay();
+  //initDisplay();
   setWifiIP();
 
   log("Initializing LittleFS");
