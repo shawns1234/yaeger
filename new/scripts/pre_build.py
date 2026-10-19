@@ -15,8 +15,20 @@ import sys
 import subprocess
 from pathlib import Path
 
+try:
+    from SCons.Script import DefaultEnvironment  # type: ignore
+    env = DefaultEnvironment()
+except Exception:
+    class _Env:
+        def subst(self, s: str) -> str:
+            return os.getcwd()
+        def Exit(self, code: int) -> None:
+            raise SystemExit(code)
+    env = _Env()  # type: ignore
+
 # The repo root is the parent of the "new" directory
-SCRIPT_DIR = Path(__file__).resolve().parent.parent
+# Use PROJECT_DIR because __file__ is not defined when PlatformIO loads this via SConscript
+SCRIPT_DIR = Path(env.subst("$PROJECT_DIR"))
 REPO_ROOT = SCRIPT_DIR
 NEW_DIR = SCRIPT_DIR
 OLD_DIR = SCRIPT_DIR / "old"
@@ -73,5 +85,11 @@ def main() -> int:
     return 0
 
 
+# Run the checks when PlatformIO loads this script.
+# The if __name__ block is only for running the file directly.
+exit_code = main()
+if exit_code != 0:
+    env.Exit(exit_code)
+
 if __name__ == "__main__":
-    sys.exit(main())
+    sys.exit(exit_code)
