@@ -8,3 +8,30 @@ node_modules
 local.config.ts
 data/
 Credentials.h
+# Compiled binaries
+.build/
+.pio/
+pio_build/
+build/
+
+# PlatformIO cache
+cache/
+.pioenvs/
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test artifacts
+test_results/
+test_output/
+
+# LittleFS
+data/
