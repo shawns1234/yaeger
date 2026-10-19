@@ -1,22 +1,18 @@
-.pio
-.vscode
-*.alog
-src/Credentials.h
-node_modules
-.nvim
-**/.DS_Store
-local.config.ts
-data/
-Credentials.h
 # Compiled binaries
 .build/
+new/.build/
+new/.pio/
 .pio/
 pio_build/
+new/pio_build/
 build/
+new/build/
 
 # PlatformIO cache
 cache/
 .pioenvs/
+new/.pioenvs/
+new/cache/
 
 # Editor
 .vscode/
@@ -24,14 +20,25 @@ cache/
 *.swp
 *.swo
 *~
+new/.vscode/
+new/.idea/
+new/*.swp
+new/*.swo
+new/*~
 
 # OS
 .DS_Store
 Thumbs.db
+new/.DS_Store
+new/Thumbs.db
 
 # Test artifacts
 test_results/
 test_output/
+new/test_results/
+new/test_output/
+
 
 # LittleFS
 data/
+new/data/
