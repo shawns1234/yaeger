@@ -1,7 +1,0 @@
-{
-    "plugins": [],
-    "pluginSearchDirs": ["."], 
-    "overrides": [
-		{"files": "*.ts", "options": { "parser": "typescript"}},
-	]
-}
