@@ -1,0 +1,1 @@
+chmod -R u+rwX w:\\github\\yaeger
